@@ -239,10 +239,7 @@ M.FunctionKeys = {
   F24 = "<F24>",
 }
 
-M.Keys = M.SpecialKeys
-M.Keys = M.Numbers
-M.Keys = M.Alphabets
-M.Keys = M.FunctionKeys
+M.Keys = vim.tbl_extend("force", M.SpecialKeys, M.Numbers, M.Alphabets, M.FunctionKeys)
 
 -- ============================================================================
 -- REGISTRY
