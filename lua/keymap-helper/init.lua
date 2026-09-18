@@ -289,6 +289,8 @@ function M.Group(Name, Bindings)
     Registry[Name][Key] = Binding
   end
 
+  vim.g.keymaps = Registry
+
   return Registry[Name]
 end
 
