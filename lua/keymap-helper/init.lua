@@ -251,6 +251,8 @@ function M.Register()
 
   Registry = {}
 
+  vim.g.keymaps = Registry
+
   return Registry
 end
 
