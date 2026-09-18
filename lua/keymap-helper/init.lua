@@ -174,7 +174,7 @@ M.Numbers = {
 -- ============================================================================
 
 ---@type table<string, SpecialKey|LeaderKey>
-M.Keys = {
+M.SpecialKeys = {
   Escape = "<Esc>",
   Enter = "<CR>",
 
@@ -238,6 +238,11 @@ M.FunctionKeys = {
   F23 = "<F23>",
   F24 = "<F24>",
 }
+
+M.Keys = M.SpecialKeys
+M.Keys = M.Numbers
+M.Keys = M.Alphabets
+M.Keys = M.FunctionKeys
 
 -- ============================================================================
 -- REGISTRY
