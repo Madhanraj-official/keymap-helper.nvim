@@ -1,0 +1,168 @@
+*keybinds.nvim*
+
+vim-keybinds.nvim
+=================
+
+A small declarative and type-safe key helper library for Neovim.
+
+USAGE
+
+	require("keybinds")
+
+Example:
+
+	local K = require("keybinds")
+
+	K.Register()
+
+	K.Group("File", {
+		Find = K.Bind(
+			K.Modes.Normal,
+			K.Leader(K.Alphabets.F),
+			"Find files"
+		),
+
+		Save = K.Bind(
+			K.Modes.Normal,
+			K.Ctrl(K.Alphabets.S),
+			"Save file"
+		),
+	})
+
+
+MODES
+
+	K.Modes.Normal
+	K.Modes.Visual
+	K.Modes.VisualBlock
+	K.Modes.Select
+	K.Modes.OperatorPending
+	K.Modes.Insert
+	K.Modes.Command
+	K.Modes.Terminal
+
+
+ALPHABETS
+
+	K.Alphabets.A
+	K.Alphabets.B
+	K.Alphabets.C
+
+	...
+
+	K.Alphabets.Z
+
+
+NUMBERS
+
+	K.Numbers.Zero
+	K.Numbers.One
+	K.Numbers.Two
+
+	...
+
+	K.Numbers.Nine
+
+
+SPECIAL KEYS
+
+	K.Keys.Escape
+	K.Keys.Enter
+	K.Keys.Tab
+	K.Keys.ShiftTab
+	K.Keys.Space
+	K.Keys.Backspace
+	K.Keys.Delete
+	K.Keys.Insert
+
+	K.Keys.Up
+	K.Keys.Down
+	K.Keys.Left
+	K.Keys.Right
+
+	K.Keys.Home
+	K.Keys.End
+	K.Keys.PageUp
+	K.Keys.PageDown
+
+	K.Keys.Command
+	K.Keys.Nop
+	K.Keys.Null
+	K.Keys.Bar
+	K.Keys.LessThan
+
+
+LEADER
+
+	K.Keys.Leader
+	K.Keys.LocalLeader
+
+	K.Leader(K.Alphabets.F)
+	K.LocalLeader(K.Alphabets.F)
+
+
+MODIFIERS
+
+	K.Ctrl(K.Alphabets.C)
+	K.Alt(K.Alphabets.C)
+	K.Shift(K.Alphabets.C)
+	K.Meta(K.Alphabets.C)
+	K.Super(K.Alphabets.C)
+
+
+FUNCTION KEYS
+
+	K.FunctionKeys.F1
+	K.FunctionKeys.F2
+
+	...
+
+	K.FunctionKeys.F24
+
+Or dynamically:
+
+	K.Function(1)
+	K.Function(12)
+	K.Function(24)
+
+
+KEYBINDS
+
+	K.Bind(
+		K.Modes.Normal,
+		K.Leader(K.Alphabets.F),
+		"Find files"
+	)
+
+
+MULTIPLE MODES
+
+	K.Bind(
+		{
+			K.Modes.Normal,
+			K.Modes.Visual,
+		},
+		K.Ctrl(K.Alphabets.C),
+		"Copy"
+	)
+
+
+GROUPS
+
+	K.Group("File", {
+		Find = K.Bind(
+			K.Modes.Normal,
+			K.Leader(K.Alphabets.F),
+			"Find files"
+		),
+	})
+
+
+REGISTRY
+
+	K.Register()
+
+Returns the keybind registry.
+
+==============================================================================
+vim-keybinds.nvim
