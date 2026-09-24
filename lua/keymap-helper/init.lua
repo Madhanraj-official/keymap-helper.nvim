@@ -405,4 +405,27 @@ function M.Function(Number)
   return ("<F%d>"):format(Number)
 end
 
+---@class Keymap
+---@field mode string|string[]
+---@field key string
+---@field description string
+
+---@alias KeymapRhs string|function
+
+---@param keybind Keymap
+---@param rhs KeymapRhs
+---@param opts? vim.keymap.set.Opts
+function M.map(keybind, rhs, opts)
+  opts = vim.tbl_extend('force', {
+    desc = keybind.description,
+  }, opts or {})
+
+  vim.keymap.set(
+    keybind.mode,
+    keybind.key,
+    rhs,
+    opts
+  )
+end
+
 return M
